@@ -1,0 +1,15 @@
+img.brand-mark {
+  flex: 0 0 32px;
+  border-radius: 0;
+  background: transparent;
+  object-fit: contain;
+}
+
+img.journey-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20.5%;
+  background: transparent;
+  object-fit: contain;
+}

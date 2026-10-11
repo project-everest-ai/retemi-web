@@ -1,0 +1,58 @@
+name: Deploy Retemi website
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    permissions:
+      contents: read
+      pages: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the public website
+        uses: actions/checkout@v6
+
+      - name: Assemble and verify the Pages artifact
+        shell: bash
+        run: |
+          mkdir _site
+          rsync -a --exclude .git --exclude .github --exclude README.md --exclude _site ./ _site/
+          test ! -e _site/README.md
+          test ! -e _site/.github
+          test -f _site/index.html
+          test -f _site/robots.txt
+          test -z "$(find _site -type l -print -quit)"
+          test -z "$(find _site -type f ! -name '*.html' ! -name '*.css' ! -name '*.svg' ! -name '*.txt' ! -name '.nojekyll' -print -quit)"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload the static website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

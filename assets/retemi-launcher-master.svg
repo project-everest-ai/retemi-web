@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="journey" x1="120" y1="900" x2="800" y2="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#10213A"/>
+      <stop offset="0.52" stop-color="#4FA8A1"/>
+      <stop offset="1" stop-color="#DCEBF0"/>
+    </linearGradient>
+    <linearGradient id="person" x1="355" y1="535" x2="355" y2="800" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4FA8A1"/>
+      <stop offset="1" stop-color="#173A50"/>
+    </linearGradient>
+    <filter id="star-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="210" fill="#10213A"/>
+  <circle cx="360" cy="405" r="72" fill="#F3EBDD"/>
+  <path d="M260 760V650c0-78 45-132 100-132s100 54 100 132v110z" fill="url(#person)"/>
+  <path d="M90 920c205-187 511-197 695-625 8 229-180 497-552 669z" fill="url(#journey)"/>
+  <path d="M806 132l18 65 65 18-65 18-18 65-18-65-65-18 65-18z" fill="#FF8F6B" opacity="0.55" filter="url(#star-glow)"/>
+  <path d="M806 132l18 65 65 18-65 18-18 65-18-65-65-18 65-18z" fill="#FF9270"/>
+  <circle cx="806" cy="215" r="9" fill="#FFF1D6"/>
+  <path d="M906 123l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#FFF1D6" opacity="0.92"/>
+  <path d="M731 107l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" fill="#FFB090" opacity="0.88"/>
+</svg>

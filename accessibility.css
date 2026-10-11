@@ -1,0 +1,5 @@
+a:focus-visible {
+  border-radius: 4px;
+  outline: 3px solid var(--coral);
+  outline-offset: 4px;
+}
