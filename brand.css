@@ -13,3 +13,70 @@ img.journey-art {
   background: transparent;
   object-fit: contain;
 }
+
+.brand-story {
+  display: grid;
+  grid-template-columns: minmax(180px, .62fr) minmax(0, 1.38fr);
+  align-items: center;
+  gap: clamp(40px, 7vw, 88px);
+  border-top: 1px solid var(--line);
+}
+
+.brand-story-mark {
+  display: grid;
+  place-items: center;
+  min-height: 300px;
+  border-radius: 32px;
+  background: linear-gradient(145deg, var(--mist), #f5f0e7);
+  overflow: hidden;
+}
+
+.brand-story-mark img {
+  width: min(78%, 310px);
+  height: auto;
+  opacity: .92;
+}
+
+.brand-story-copy {
+  max-width: 760px;
+}
+
+.brand-story-copy > p:not(.eyebrow) {
+  font-size: 1.08rem;
+}
+
+.north-star-callout {
+  margin: 30px 0 24px;
+  padding: 20px 22px;
+  border-left: 4px solid var(--coral);
+  border-radius: 0 14px 14px 0;
+  background: var(--sand);
+  color: var(--ink);
+}
+
+.brand-story-link {
+  display: inline-block;
+  font-weight: 700;
+}
+
+@media (max-width: 780px) {
+  .brand-story {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .brand-story-mark {
+    min-height: 220px;
+  }
+
+  .brand-story-mark img {
+    width: min(60%, 250px);
+  }
+}
+
+@media (max-width: 470px) {
+  .brand-story-mark {
+    min-height: 180px;
+    border-radius: 24px;
+  }
+}
