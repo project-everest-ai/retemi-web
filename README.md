@@ -12,6 +12,13 @@ Project Everest documentation, or credentials belong here.
 - Standalone public history begins with the website content at that checkpoint;
   unrelated private-repository history was intentionally not copied.
 
+## Project journey
+
+For a public overview of the architecture, AI-assisted engineering approach,
+safety controls, pilot-readiness work, and lessons learned while building
+Retemi, see
+[Project Everest / Retemi — AI-Assisted Product Build Journey](.github/portfolio/RETEMI_PROJECT_EVEREST_BUILD_JOURNEY.md).
+
 ## Local preview
 
 Run `python3 -m http.server 8080` from this directory and open
